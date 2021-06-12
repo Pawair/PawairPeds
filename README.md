@@ -1,6 +1,6 @@
 # PawairPeds
 
-(https://gyazo.com/36e8cc46026b4563b05bd2836f23b8e7)
+(https://i.gyazo.com/36e8cc46026b4563b05bd2836f23b8e7.png)
 
 Require :  https://github.com/esx-framework/es_extended
 
