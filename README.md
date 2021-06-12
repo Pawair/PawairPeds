@@ -9,4 +9,4 @@ start PawairPeds
 
 
 #  Informations
-New Menu Peds en 100% RageUI , quelques peds et partis sont bloqués car il sont transparents , je vais plusieurs mises à jours du menu
+New Menu Peds en 100% RageUI , quelques peds et partis sont bloqués car il sont transparents , je vais plusieurs mises à jours du menu  <3
