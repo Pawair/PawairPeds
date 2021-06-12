@@ -60,6 +60,9 @@ RMenu.Add('ped', 'anim', RageUI.CreateSubMenu(RMenu:Get('ped', 'main'), "Animals
 RMenu.Add('ped', 'other', RageUI.CreateSubMenu(RMenu:Get('ped', 'main'), "Other Peds", "Other Peds"))
 RMenu.Add('ped', 'add', RageUI.CreateSubMenu(RMenu:Get('ped', 'main'), "Add-On Peds", "Add-On Peds"))
 RMenu.Add('ped', 'cred', RageUI.CreateSubMenu(RMenu:Get('ped', 'main'), "Créditations", "Créditations"))
+RMenu.Add('ped', 'gang', RageUI.CreateSubMenu(RMenu:Get('ped', 'main'), "Gangs Peds", "Gangs Peds"))
+RMenu.Add('ped', 'gangfem', RageUI.CreateSubMenu(RMenu:Get('ped', 'gang'), "Female Peds", "Female Peds"))
+RMenu.Add('ped', 'gangmal', RageUI.CreateSubMenu(RMenu:Get('ped', 'gang'), "Male Peds", "Male Peds"))
 
 
 --cree sous menu
@@ -84,15 +87,15 @@ Citizen.CreateThread(function()
                     end)
                 end
             end)  
-                    RageUI.Button("~b~Peds search", "Search for a ped (a_m_y_hipster_02)",{RightLabel = ""}, true, function(Hovered, Active, Selected)
+                    RageUI.Button("~b~Peds search", "Search for a ped ( Example : a_m_y_hipster_02 ) https://docs.fivem.net/docs/game-references/ped-models/",{RightLabel = ""}, true, function(Hovered, Active, Selected)
                         if (Selected) then   
                             local j1 = PlayerId()
                             local newped = KeyboardInput('Search for a ped Enter a ped under penalty of deco reco ! ', '', 45)
                             local p1 = GetHashKey(newped)
-                            RequestModel(p1)
                             while not HasModelLoaded(p1) do
-                              Wait(100)
-                             end
+                                Wait(100)
+                          
+                            end
                              SetPlayerModel(j1, p1)
                              SetModelAsNoLongerNeeded(p1)
                              ESX.ShowNotification('Your character ~g~was correctly changed')
@@ -109,6 +112,9 @@ Citizen.CreateThread(function()
             RageUI.Button("Animals Peds", "Animals Peds", {RightLabel = ">>>"}, true, function()
             end, RMenu:Get('ped', 'anim'))
 
+            RageUI.Button("Gangs Peds", "Gangs Peds", {RightLabel = ">>>"}, true, function()
+            end, RMenu:Get('ped', 'gang'))
+
             RageUI.Button("~m~Other Peds", "Available soon", {RightBadge = RageUI.BadgeStyle.Lock}, true, function(Hovered, Active, Selected)
             end)
 
@@ -121,6 +127,641 @@ Citizen.CreateThread(function()
            
 
         end, function()
+        end)
+
+        RageUI.IsVisible(RMenu:Get('ped', 'gang'), true, true, true, function()
+            RageUI.Button("Male Peds", "Gang Male Peds", {RightLabel = ">>>"}, true, function()
+            end, RMenu:Get('ped', 'gangmal'))
+            RageUI.Button("Female Peds", "Gang Female Peds", {RightLabel = ">>>"}, true, function()
+            end, RMenu:Get('ped', 'gangfem'))
+        end)
+
+        RageUI.IsVisible(RMenu:Get('ped', 'gangmal'), true, true, true, function()
+
+            RageUI.Button("g_m_importexport_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_importexport_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_m_armboss_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_armboss_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_m_armgoon_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_armgoon_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+            
+            RageUI.Button("g_m_m_armlieut_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_armlieut_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end )
+            
+            RageUI.Button("g_m_m_chemwork_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_chemwork_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_m_chiboss_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_chiboss_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_m_chicold_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_chicold_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_m_chigoon_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_chigoon_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_m_chigoon_02", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_chigoon_02')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_m_korboss_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_korboss_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_m_mexboss_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_mexboss_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_m_mexboss_02", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_mexboss_02')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_armgoon_02", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_armgoon_02')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_azteca_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_azteca_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_ballaeast_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_ballaeast_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_ballaorig_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_ballaorig_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_ballasout_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_ballasout_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_famca_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_famca_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_famdnf_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_famdnf_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_famfor_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_famfor_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_korean_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_korean_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_korean_02", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_korean_02')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_korlieut_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_korlieut_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_lost_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_lost_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_lost_02", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_lost_02')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_lost_03", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_lost_03')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_mexgang_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_mexgang_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_mexgoon_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_mexgoon_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_mexgoon_02", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_mexgoon_02')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+            
+            RageUI.Button("g_m_y_mexgoon_03", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_mexgoon_03')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_pologoon_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_pologoon_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_pologoon_02", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_pologoon_02')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_salvaboss_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_salvaboss_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_salvagoon_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_salvagoon_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_salvagoon_02", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_salvagoon_02')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_salvagoon_03", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_salvagoon_03')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_strpunk_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_strpunk_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_m_y_strpunk_02", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_y_strpunk_02')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end )
+
+            RageUI.Button("g_m_m_casrn_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_m_m_casrn_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end )
+
+
+
+
+        end)
+
+        RageUI.IsVisible(RMenu:Get('ped', 'gangfem'), true, true, true, function()
+            
+            RageUI.Button("g_f_importexport_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_f_importexport_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_f_y_ballas_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_f_y_ballas_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_f_y_families_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_f_y_families_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_f_y_vagos_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_f_y_vagos_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            RageUI.Button("g_f_y_lost_01", "Choose this ped ?", {RightLabel = "~c~ Select"},true, function(Hovered, Active, Selected)
+                if (Selected) then   
+                local j1 = PlayerId()
+                local p1 = GetHashKey('g_f_y_lost_01')
+                RequestModel(p1)
+                while not HasModelLoaded(p1) do
+                  Wait(100)
+                 end
+                 SetPlayerModel(j1, p1)
+                 SetModelAsNoLongerNeeded(p1)
+                 ESX.ShowNotification('Your character ~g~was correctly changed')
+                end   
+            end ) 
+
+            
         end)
 
         
