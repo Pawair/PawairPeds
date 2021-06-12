@@ -1,6 +1,6 @@
 # PawairPeds
 
-https://github.com/Pawair/PawairPeds/blob/main/PawairPeds%C2%B5.png
+(https://gyazo.com/36e8cc46026b4563b05bd2836f23b8e7)
 
 Require :  https://github.com/esx-framework/es_extended
 
