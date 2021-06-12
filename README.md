@@ -1,4 +1,5 @@
 # PawairPeds
+Require :  https://github.com/esx-framework/es_extended
 
 #  Réglement
 Merci de respecter la créditation et de ne pas la retirer <3
