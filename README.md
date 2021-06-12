@@ -2,7 +2,11 @@
 
 ![screenshot](https://i.gyazo.com/36e8cc46026b4563b05bd2836f23b8e7.png)
 
-Require :  https://github.com/esx-framework/es_extended
+# Requirement
+
+- [es_extended](https://github.com/ESX-Org/es_extended)
+- [skinchanger](https://github.com/ESX-Org/skinchanger)
+- [esx_skin](https://github.com/ESX-Org/esx_skin)
 
 #  Réglement
 Merci de respecter la créditation et de ne pas la retirer <3
