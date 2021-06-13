@@ -90,17 +90,16 @@ Citizen.CreateThread(function()
                     RageUI.Button("~b~Peds search", "Search for a ped ( Example : a_m_y_hipster_02 ) https://docs.fivem.net/docs/game-references/ped-models/",{RightLabel = ""}, true, function(Hovered, Active, Selected)
                         if (Selected) then   
                             local j1 = PlayerId()
-                            local newped = KeyboardInput('Search for a ped Enter a ped under penalty of deco reco ! ', '', 45)
+                            local newped = KeyboardInput('Search for a ped Enter a ped under penalty of deco reco !', '', 45)
                             local p1 = GetHashKey(newped)
+                            RequestModel(p1)
                             while not HasModelLoaded(p1) do
-                                Wait(100)
-                          
-                            end
+                              Wait(100)
+                             end
                              SetPlayerModel(j1, p1)
                              SetModelAsNoLongerNeeded(p1)
                              ESX.ShowNotification('Your character ~g~was correctly changed')
-                             
-                            end 
+                            end      
                         end)
 
             RageUI.Button("Male Peds", "Male Peds", {RightLabel = ">>>"},true, function()
